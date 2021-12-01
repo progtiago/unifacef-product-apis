@@ -8,4 +8,4 @@ spring:
       uri: mongodb://localhost:27017/product-api
 integration:
   store:
-    url:  http://kle8y.mocklab.io
+    url:  http://localhost:8084

@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -25,7 +24,6 @@ public class ProductDocument {
   private String brand;
   private List<String> images;
   private List<AttributeDocument> attributes;
-  @CreatedDate
   private LocalDateTime createdDate;
   @LastModifiedDate
   private LocalDateTime lastModifiedDate;
