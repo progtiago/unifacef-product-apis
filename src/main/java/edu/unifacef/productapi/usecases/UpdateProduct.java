@@ -25,9 +25,10 @@ public class UpdateProduct {
 
   public Product execute(final Product product) {
     log.info("Update product. Product code: {}", product.getCode());
-    if(!productDataGateway.findByCode(product.getCode()).isPresent()) {
-      throw new NotFoundException(messageUtils.getMessage(PRODUCT_NOT_FOUND, product.getCode()));
-    }
+    Product oldProduct = productDataGateway.findByCode(product.getCode()).orElseThrow(() ->
+        new NotFoundException(messageUtils.getMessage(PRODUCT_NOT_FOUND, product.getCode())));
+    product.setCreatedDate(oldProduct.getCreatedDate());
+
     Product saved = productDataGateway.save(product);
     if(ff4j.check(Features.SEND_TO_STORE.getKey())) {
       storeGateway.send(saved);

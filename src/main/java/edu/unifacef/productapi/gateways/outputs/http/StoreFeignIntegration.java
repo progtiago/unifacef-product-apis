@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient(name = "store", url = "${integration.store.url}")
 public interface StoreFeignIntegration {
 
-  @PostMapping(path = "/api/v1/products/{code}", consumes = APPLICATION_JSON_VALUE)
-  void send(@PathVariable("code") final String code,
+  @PostMapping(path = "/api/v1/products/{productCode}", consumes = APPLICATION_JSON_VALUE)
+  void send(@PathVariable("productCode") final String productCode,
             final ProductResource productResource);
 }

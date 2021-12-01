@@ -4,7 +4,6 @@ import static java.util.stream.Collectors.toList;
 import static org.apache.commons.collections4.CollectionUtils.emptyIfNull;
 
 import edu.unifacef.productapi.domains.Product;
-import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Data;
 
@@ -16,8 +15,6 @@ public class ProductResource {
   private String brand;
   private List<String> images;
   private List<AttributeResource> attributes;
-  private LocalDateTime createdDate;
-  private LocalDateTime lastModifiedDate;
 
   public ProductResource(final Product product) {
     this.name = product.getName();
@@ -26,8 +23,6 @@ public class ProductResource {
     this.images = product.getImages();
     this.attributes = emptyIfNull(product.getAttributes())
         .stream().map(AttributeResource::new).collect(toList());
-    this.createdDate = product.getCreatedDate();
-    this.lastModifiedDate = product.getLastModifiedDate();
   }
 
 }
