@@ -12,8 +12,11 @@ Também deverá ser criado um microsserviço de agregação onde os payloads ori
 ![image](https://user-images.githubusercontent.com/595044/144319403-2fe3b312-4a9d-4df8-9d21-e79558bb52f6.png)
 
 **Product-Apis:** Microsserviço responsável pelo CRUD de produtos via HTTP, por persistir no mongo e enviar para o Store-Apis.
+
 **Price-Apis:** Microsserviço responsável pelo CRUD de preços via HTTP, por persistir no mongo e enviar para o Store-Apis.
+
 **Iventory-Apis:** Microsserviço responsável pelo CRUD de posições de estoque via HTTP, por persistir no mongo e enviar para o Store-Apis.
+
 **Store-Apis:** Microsserviço responsável por agregar os dados oriundos dos microsserviços de entrada.
 
 ## Contratos da api de produto:
